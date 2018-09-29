@@ -15,8 +15,8 @@ export class HerocreatorComponent implements OnInit {
   }
 
   createCharacter() {
-    this.active.characterCreationWindow = false;
-    this.active.overviewWindow = true;
+    this.active.windowCharacterChreation = false;
+    this.active.windowOverview = true;
   }
 
 }

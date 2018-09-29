@@ -10,9 +10,14 @@ export class InventoryComponent implements OnInit {
 
   @Input() active: SwitchesWindowsActive;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
+  }
+
+  closeInventory() {
+    this.active.windowInventory = false;
   }
 
 }

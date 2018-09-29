@@ -10,9 +10,31 @@ export class OverviewComponent implements OnInit {
 
   @Input() active: SwitchesWindowsActive;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
   }
 
+  openWindowInventory() {
+    this.active.windowInventory = !this.active.windowInventory;
+  }
+
+  openWindowCharacter() {
+    this.active.windowCharacter = !this.active.windowCharacter;
+
+  }
+
+  openWindowSkill() {
+    this.active.windowSkill = !this.active.windowSkill;
+
+  }
+
+  openWindowBattle() {
+    this.active.windowBattle = !this.active.windowBattle;
+  }
+
+  openWindowShop() {
+    this.active.windowShop = !this.active.windowShop;
+  }
 }

@@ -26,7 +26,7 @@ export class MainwindowComponent implements OnInit {
   }
 
   startGame() {
-    this.active.characterCreationWindow = true;
+    this.active.windowCharacterChreation = true;
     this.start = true;
   }
 

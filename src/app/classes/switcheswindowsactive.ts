@@ -1,9 +1,9 @@
 export class SwitchesWindowsActive {
-  characterCreationWindow: boolean;
-  characterWindow: boolean;
-  inventoryWindow: boolean;
-  battleWindow: boolean;
-  shopWindow: boolean;
-  skillWindow: boolean;
-  overviewWindow: boolean;
+  windowCharacterChreation: boolean;
+  windowCharacter: boolean;
+  windowInventory: Boolean;
+  windowBattle: boolean;
+  windowShop: boolean;
+  windowSkill: boolean;
+  windowOverview: boolean;
 }

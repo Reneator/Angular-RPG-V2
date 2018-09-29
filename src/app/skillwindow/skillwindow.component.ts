@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {SwitchesWindowsActive} from '../classes/switcheswindowsactive';
 
 @Component({
   selector: 'app-skillwindow',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./skillwindow.component.css']
 })
 export class SkillwindowComponent implements OnInit {
+
+  @Input() active: SwitchesWindowsActive;
 
   constructor() { }
 
