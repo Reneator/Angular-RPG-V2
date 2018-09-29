@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {Hero} from '../classes/characters/hero';
+import {Monster} from '../classes/characters/monster';
+import {SwitchesWindowsActive} from '../classes/switcheswindowsactive';
 
 @Component({
   selector: 'app-mainwindow',
@@ -7,9 +10,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainwindowComponent implements OnInit {
 
-  constructor() { }
+  player: Hero;
+  enemy: Monster;
+
+  start: boolean;
+
+  active: SwitchesWindowsActive = new SwitchesWindowsActive();
+
+
+  constructor() {
+  }
 
   ngOnInit() {
+    this.startGame();
+  }
+
+  startGame() {
+    this.active.characterCreationWindow = true;
+    this.start = true;
   }
 
 }

@@ -2,11 +2,11 @@ import {Component, Input, OnInit} from '@angular/core';
 import {SwitchesWindowsActive} from '../classes/switcheswindowsactive';
 
 @Component({
-  selector: 'app-characterwindow',
-  templateUrl: './characterwindow.component.html',
-  styleUrls: ['./characterwindow.component.css']
+  selector: 'app-overview',
+  templateUrl: './overview.component.html',
+  styleUrls: ['./overview.component.css']
 })
-export class CharacterwindowComponent implements OnInit {
+export class OverviewComponent implements OnInit {
 
   @Input() active: SwitchesWindowsActive;
 

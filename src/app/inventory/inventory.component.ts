@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {SwitchesWindowsActive} from '../classes/switcheswindowsactive';
 
 @Component({
   selector: 'app-inventory',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./inventory.component.css']
 })
 export class InventoryComponent implements OnInit {
+
+  @Input() active: SwitchesWindowsActive;
 
   constructor() { }
 

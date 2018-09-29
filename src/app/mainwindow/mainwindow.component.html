@@ -3,9 +3,10 @@
 </p>
 
 
-<app-herocreator></app-herocreator>
-<app-battle></app-battle>
-<app-characterwindow></app-characterwindow>
-<app-inventory></app-inventory>
-<app-shop></app-shop>
+<app-herocreator *ngIf="active.characterCreationWindow" [active]="active"></app-herocreator>
+<app-overview *ngIf="active.overviewWindow" [active]="active"></app-overview>
+<app-battle *ngIf="active.battleWindow" [enemy]="enemy" [hero]="player" [active]="active"></app-battle>
+<app-characterwindow *ngIf="active.characterWindow" [active]="active"></app-characterwindow>
+<app-inventory *ngIf="active.inventoryWindow" [active]="active"></app-inventory>
+<app-shop *ngIf="active.shopWindow" [active]="active"></app-shop>
 

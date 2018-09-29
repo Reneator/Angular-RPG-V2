@@ -9,6 +9,8 @@ import { SkillwindowComponent } from './skillwindow/skillwindow.component';
 import { CharacterwindowComponent } from './characterwindow/characterwindow.component';
 import { MainwindowComponent } from './mainwindow/mainwindow.component';
 import { HerocreatorComponent } from './herocreator/herocreator.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { OverviewComponent } from './overview/overview.component';
 
 @NgModule({
   declarations: [
@@ -19,10 +21,12 @@ import { HerocreatorComponent } from './herocreator/herocreator.component';
     SkillwindowComponent,
     CharacterwindowComponent,
     MainwindowComponent,
-    HerocreatorComponent
+    HerocreatorComponent,
+    OverviewComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
