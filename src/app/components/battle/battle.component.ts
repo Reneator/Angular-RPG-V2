@@ -1,6 +1,4 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {SwitchesWindowsActive} from '../../classes/switcheswindowsactive';
-import {Hero} from '../../classes/characters/hero';
 import {Monster} from '../../classes/characters/monster';
 import {PlayerWindow} from '../playerwindows';
 
