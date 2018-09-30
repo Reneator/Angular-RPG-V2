@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {PlayerWindow} from '../playerwindows';
 
 @Component({
@@ -8,6 +8,7 @@ import {PlayerWindow} from '../playerwindows';
 })
 export class InventoryComponent  extends PlayerWindow  implements OnInit {
 
+  @Output() voted = new EventEmitter<string>();
 
   constructor() {
     super();
@@ -17,7 +18,10 @@ export class InventoryComponent  extends PlayerWindow  implements OnInit {
   }
 
   closeInventory() {
+    this.voted.emit('WTF');
     this.active.windowInventory = false;
   }
+
+
 
 }

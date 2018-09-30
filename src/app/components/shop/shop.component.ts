@@ -1,19 +1,16 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {SwitchesWindowsActive} from '../../classes/switcheswindowsactive';
-import {Hero} from '../../classes/characters/hero';
+import {Component, OnInit} from '@angular/core';
+import {PlayerWindow} from '../playerwindows';
 
 @Component({
   selector: 'app-shop',
   templateUrl: './shop.component.html',
   styleUrls: ['./shop.component.css']
 })
-export class ShopComponent implements OnInit {
+export class ShopComponent extends PlayerWindow implements OnInit {
 
-  @Input() active: SwitchesWindowsActive;
-  @Input() hero: Hero;
-
-
-  constructor() { }
+  constructor() {
+    super();
+  }
 
   ngOnInit() {
   }

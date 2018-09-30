@@ -10,7 +10,7 @@ export class Skill {
 
 
   use(user: Character, target: Character) {
-    // target.damage;
+    user.damageCharacter(target);
   }
 
 }

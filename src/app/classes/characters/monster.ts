@@ -10,5 +10,10 @@ export class Monster extends Character {
 
   damageCharacter(other: Character): void {
     super.damageCharacter(other);
+    // this.rewardPlayer
+  }
+
+  onDeath(){
+
   }
 }

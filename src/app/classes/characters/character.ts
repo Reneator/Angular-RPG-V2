@@ -1,6 +1,6 @@
 import {CharacterSkillsContainer} from '../skills/character-skills-container';
 
-export class Character {
+export abstract class Character {
   name: string;
   hp: number;
   damage: number;
@@ -21,4 +21,6 @@ export class Character {
   die(): void {
     this.alive = false;
   }
+
+
 }

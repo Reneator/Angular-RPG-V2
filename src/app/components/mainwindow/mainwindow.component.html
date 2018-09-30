@@ -3,11 +3,11 @@
 </p>
 
 
-<app-herocreator *ngIf="active.windowCharacterChreation" [hero]="player" [active]="active"></app-herocreator>
-<app-overview *ngIf="active.windowOverview" [hero]="player" [active]="active"></app-overview>
-<app-battle *ngIf="active.windowBattle" [enemy]="enemy" [hero]="player" [active]="active"></app-battle>
-<app-characterwindow *ngIf="active.windowCharacter" [hero]="player" [active]="active"></app-characterwindow>
-<app-inventory *ngIf="active.windowInventory" [hero]="player" [active]="active"></app-inventory>
-<app-shop *ngIf="active.windowShop" [hero]="player" [active]="active"></app-shop>
-<app-skillwindow *ngIf="active.windowSkill" [hero]="player" [active]="active"></app-skillwindow>
+<app-herocreator *ngIf="active.windowCharacterChreation"  [emitter]="emitter" [hero]="player" [active]="active"></app-herocreator>
+<app-overview *ngIf="active.windowOverview" [emitter]="emitter" [hero]="player" [active]="active"></app-overview>
+<app-battle *ngIf="active.windowBattle" [emitter]="emitter" [enemy]="enemy" [hero]="player" [active]="active"></app-battle>
+<app-characterwindow *ngIf="active.windowCharacter" [emitter]="emitter" [hero]="player" [active]="active"></app-characterwindow>
+<app-inventory *ngIf="active.windowInventory" (voted)="onVoted($event)" [emitter]="emitter" [hero]="player" [active]="active"></app-inventory>
+<app-shop *ngIf="active.windowShop" [emitter]="emitter" [hero]="player" [active]="active"></app-shop>
+<app-skillwindow *ngIf="active.windowSkill" [emitter]="emitter" [hero]="player" [active]="active"></app-skillwindow>
 
