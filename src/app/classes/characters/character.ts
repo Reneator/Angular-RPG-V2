@@ -4,12 +4,6 @@ export class Character {
   damage: number;
   alive: boolean;
 
-  constructor(name: string, hp: number, damage: number, alive: boolean) {
-    this.name = name;
-    this.hp = hp;
-    this.damage = damage;
-    this.alive = alive;
-  }
 
   damageCharacter(other: Character): void {
     if (this.hp - other.damage <= 0) {

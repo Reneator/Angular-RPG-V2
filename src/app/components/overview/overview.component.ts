@@ -1,16 +1,16 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {SwitchesWindowsActive} from '../classes/switcheswindowsactive';
+import {Component, OnInit} from '@angular/core';
+import {PlayerWindow} from '../playerwindows';
 
 @Component({
   selector: 'app-overview',
   templateUrl: './overview.component.html',
   styleUrls: ['./overview.component.css']
 })
-export class OverviewComponent implements OnInit {
+export class OverviewComponent extends PlayerWindow implements OnInit {
 
-  @Input() active: SwitchesWindowsActive;
 
   constructor() {
+    super();
   }
 
   ngOnInit() {
@@ -22,12 +22,10 @@ export class OverviewComponent implements OnInit {
 
   openWindowCharacter() {
     this.active.windowCharacter = !this.active.windowCharacter;
-
   }
 
   openWindowSkill() {
     this.active.windowSkill = !this.active.windowSkill;
-
   }
 
   openWindowBattle() {

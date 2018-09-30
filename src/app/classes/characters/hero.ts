@@ -1,21 +1,18 @@
 import {Character} from './character';
 import {HeroLevel} from './herolevel';
+import {HeroClass} from './hero-class';
 
 export class Hero extends Character {
   gold: number;
   heroLevel: HeroLevel;
   mana: number;
+  heroClass: HeroClass;
 
   // energy: Energy;
   // inventory: Inventory;
   // attributes: Attributes;
   // skills: Skills;
   // stats: Stats
-
-  constructor(name: string, hp: number, damage: number, alive: boolean, goldInventory: number) {
-    super(name, hp, damage, alive);
-    this.gold = goldInventory;
-  }
 
   setHeroLevel(herolevel: HeroLevel) {
     this.heroLevel = herolevel;

@@ -1,16 +1,16 @@
 import {Component, OnInit} from '@angular/core';
-import {Hero} from '../classes/characters/hero';
-import {Monster} from '../classes/characters/monster';
-import {SwitchesWindowsActive} from '../classes/switcheswindowsactive';
+import {SwitchesWindowsActive} from '../../classes/switcheswindowsactive';
+import {Monster} from '../../classes/characters/monster';
+import {Hero} from '../../classes/characters/hero';
 
 @Component({
   selector: 'app-mainwindow',
   templateUrl: './mainwindow.component.html',
   styleUrls: ['./mainwindow.component.css']
 })
-export class MainwindowComponent implements OnInit {
+export class MainwindowComponent  implements OnInit {
 
-  player: Hero;
+  player: Hero = new Hero();
   enemy: Monster;
 
   start: boolean;

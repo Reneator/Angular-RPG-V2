@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {SwitchesWindowsActive} from '../classes/switcheswindowsactive';
+import {SwitchesWindowsActive} from '../../classes/switcheswindowsactive';
+import {Hero} from '../../classes/characters/hero';
 
 @Component({
   selector: 'app-shop',
@@ -9,6 +10,8 @@ import {SwitchesWindowsActive} from '../classes/switcheswindowsactive';
 export class ShopComponent implements OnInit {
 
   @Input() active: SwitchesWindowsActive;
+  @Input() hero: Hero;
+
 
   constructor() { }
 

@@ -1,16 +1,16 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {SwitchesWindowsActive} from '../classes/switcheswindowsactive';
+import {Component, OnInit} from '@angular/core';
+import {PlayerWindow} from '../playerwindows';
 
 @Component({
   selector: 'app-inventory',
   templateUrl: './inventory.component.html',
   styleUrls: ['./inventory.component.css']
 })
-export class InventoryComponent implements OnInit {
+export class InventoryComponent  extends PlayerWindow  implements OnInit {
 
-  @Input() active: SwitchesWindowsActive;
 
   constructor() {
+    super();
   }
 
   ngOnInit() {

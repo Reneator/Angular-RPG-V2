@@ -1,5 +1,4 @@
-import {Item} from './Item';
-
-export class Equipment extends Item {
+export class Equipment {
+  goldValue: number;
 
 }
