@@ -7,17 +7,17 @@ export class HeroLevel {
   maxLevel: number;
   levelSteppings: number[];
 
-  constructor(level: number, currentExp: number, levelSteppings: number[]) {
-    this.levelSteppings = levelSteppings;
-    this.level = level;
-    this.currentExpStep = levelSteppings[level];
-    this.maxLevel = levelSteppings.length - 1;
-    this.currentExp = currentExp;
-    this.overallExp = this.getOverallExpForLevel(level);
-
-    this.setExpRemain();
-
-  }
+  // constructor(level: number, currentExp: number, levelSteppings: number[]) {
+  //   this.levelSteppings = levelSteppings;
+  //   this.level = level;
+  //   this.currentExpStep = levelSteppings[level];
+  //   this.maxLevel = levelSteppings.length - 1;
+  //   this.currentExp = currentExp;
+  //   this.overallExp = this.getOverallExpForLevel(level);
+  //
+  //   this.setExpRemain();
+  //
+  // }
 
   gainExp(exp: number): void {
     if (this.currentExp + exp >= this.currentExpStep) {

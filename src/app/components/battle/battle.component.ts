@@ -22,4 +22,8 @@ export class BattleComponent extends PlayerWindow implements OnInit {
   useSkill(skill: Skill) {
     skill.use(this.hero, this.enemy);
   }
+
+  attackEnemy() {
+    this.enemy.damageCharacter(this.hero);
+  }
 }

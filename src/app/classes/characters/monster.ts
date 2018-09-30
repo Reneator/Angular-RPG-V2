@@ -8,12 +8,17 @@ export class Monster extends Character {
   experience: number;
 
 
+  constructor(hp: number) {
+    super();
+    this.hp = hp;
+  }
+
   damageCharacter(other: Character): void {
     super.damageCharacter(other);
     // this.rewardPlayer
   }
 
-  onDeath(){
+  onDeath() {
 
   }
 }

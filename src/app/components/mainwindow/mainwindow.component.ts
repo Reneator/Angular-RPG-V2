@@ -2,6 +2,7 @@ import {Component, EventEmitter, OnInit} from '@angular/core';
 import {SwitchesWindowsActive} from '../../classes/switcheswindowsactive';
 import {Monster} from '../../classes/characters/monster';
 import {Hero} from '../../classes/characters/hero';
+import {HeroLevel} from '../../classes/characters/herolevel';
 
 @Component({
   selector: 'app-mainwindow',
@@ -10,8 +11,9 @@ import {Hero} from '../../classes/characters/hero';
 })
 export class MainwindowComponent implements OnInit {
 
-  player: Hero = new Hero();
-  enemy: Monster;
+  player: Hero = new Hero(200);
+
+  enemy: Monster = new Monster(200);
 
   start: boolean;
 
