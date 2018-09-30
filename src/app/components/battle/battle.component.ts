@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Monster} from '../../classes/characters/monster';
 import {PlayerWindow} from '../playerwindows';
+import {Skill} from '../../classes/skills/skill';
 
 @Component({
   selector: 'app-battle',
@@ -18,4 +19,7 @@ export class BattleComponent extends PlayerWindow implements OnInit {
   }
 
 
+  useSkill(skill: Skill) {
+    skill.use(this.hero, this.enemy);
+  }
 }

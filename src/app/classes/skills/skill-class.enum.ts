@@ -1,3 +1,3 @@
 export enum SkillClass {
-  CURSE, HEAL, ATTACK
+  CURSE, HEAL, ATTACK, BUFF, SPELL
 }

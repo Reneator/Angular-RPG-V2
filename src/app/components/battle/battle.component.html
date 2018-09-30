@@ -5,3 +5,6 @@
 {{hero}}
 {{enemy}}
 
+
+<button *ngFor="let skill of hero.skills" (click)="useSkill(skill)" mat-button >{{skill.name}}</button>
+

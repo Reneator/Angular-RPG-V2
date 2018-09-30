@@ -1,2 +1,2 @@
-export class Skill {
+export class Perk {
 }

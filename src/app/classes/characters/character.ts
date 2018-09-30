@@ -1,8 +1,12 @@
+import {CharacterSkillsContainer} from '../skills/character-skills-container';
+
 export class Character {
   name: string;
   hp: number;
   damage: number;
   alive: boolean;
+
+  skills: CharacterSkillsContainer = new CharacterSkillsContainer();
 
 
   damageCharacter(other: Character): void {
