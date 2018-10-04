@@ -1,17 +1,22 @@
 import {Component, OnInit} from '@angular/core';
 import {HeroClass} from '../../classes/characters/hero-class';
 import {PlayerWindow} from '../playerwindows';
+import {HeroService} from '../../services/hero.service';
+import {HeroLevelService} from '../../services/herolevel.service';
 
 @Component({
   selector: 'app-herocreator',
   templateUrl: './herocreator.component.html',
-  styleUrls: ['./herocreator.component.css']
+  styleUrls: ['./herocreator.component.css'],
+  providers: [HeroService, HeroLevelService]
 })
 export class HerocreatorComponent extends PlayerWindow implements OnInit {
 
   heroClassOptions: string[] = Object.keys(HeroClass);
+  heroName: string;
+  heroClass: HeroClass;
 
-  constructor() {
+  constructor(private heroService: HeroService) {
     super();
   }
 
@@ -20,6 +25,8 @@ export class HerocreatorComponent extends PlayerWindow implements OnInit {
   }
 
   createCharacter() {
+    this.heroService.generateHero(this.hero, this.heroName, this.heroClass);
+
     this.active.windowCharacterChreation = false;
     this.active.windowOverview = true;
   }

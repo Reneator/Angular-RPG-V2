@@ -4,7 +4,7 @@ import {PlayerWindow} from '../playerwindows';
 @Component({
   selector: 'app-overview',
   templateUrl: './overview.component.html',
-  styleUrls: ['./overview.component.css']
+  styleUrls: ['./overview.component.css'],
 })
 export class OverviewComponent extends PlayerWindow implements OnInit {
 
@@ -35,4 +35,15 @@ export class OverviewComponent extends PlayerWindow implements OnInit {
   openWindowShop() {
     this.active.windowShop = !this.active.windowShop;
   }
+
+  openCharacterCreation() {
+    this.active.windowCharacterChreation = !this.active.windowCharacterChreation;
+  }
+
+  public cheatExp(exp: number) {
+    this.hero.gainExp(exp);
+    console.log('You cheated: your hero got ' + exp + ' Experience added!');
+  }
+
+
 }

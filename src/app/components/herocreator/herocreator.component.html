@@ -7,7 +7,7 @@
 
 <div *ngIf="hero != null">
   <mat-form-field>
-    <mat-select [(value)]="hero.heroClass" placeholder="Hero Class">
+    <mat-select [(value)]="heroClass" placeholder="Hero Class">
       <!--<mat-option (click)="reloadScripts()"></mat-option>-->
       <mat-option *ngFor="let hero of heroClassOptions" [value]="hero">
         {{hero}}
@@ -15,7 +15,7 @@
     </mat-select>
   </mat-form-field>
 
-  <input [(ngModel)]="hero.name" [ngModelOptions]="{standalone: true}"
+  <input [(ngModel)]="heroName" [ngModelOptions]="{standalone: true}"
          placeholder="Name"/>
 </div>
 

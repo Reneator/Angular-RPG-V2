@@ -1,8 +1,6 @@
 import {Character} from './character';
 import {HeroLevel} from './herolevel';
 import {HeroClass} from './hero-class';
-import {EventEmitter, Output} from '@angular/core';
-import {EventCharacterDeath} from '../event/event-character-death';
 
 export class Hero extends Character {
   gold: number;
@@ -10,18 +8,13 @@ export class Hero extends Character {
   mana: number;
   heroClass: HeroClass;
 
-private _deathSubscription;
 
-
-  constructor(damage: number) {
-    super();
-    this.damage = damage;
-    this._deathSubscription = Character.onDeath.subscribe({
-      next: (event: EventCharacterDeath) => {
-        console.log(`Somebody died #Killer${event.cause}: Victim ${event.victim}`);
-      }
-    });
-  }
+  // constructor(damage: number) {
+  //   super();
+  //   this.damage = damage;
+  //   this.hp = 100;
+  //
+  // }
 
 // energy: Energy;
   // inventory: Inventory;
@@ -44,6 +37,14 @@ private _deathSubscription;
 
   gainGold(gold: number): void {
     this.gold += gold;
+  }
+
+  reward(character: Character) {
+    if (character.lootTable != null) {
+      this.gainExp(character.lootTable.expOnDeath);
+      this.gainGold(character.lootTable.goldOnDeath);
+    }
+
   }
 
 }

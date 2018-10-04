@@ -1,4 +1,5 @@
 import {Character} from './character';
+import {LootTable} from './loot-table';
 
 export class Monster extends Character {
   gold: number;
@@ -11,6 +12,9 @@ export class Monster extends Character {
   constructor(hp: number) {
     super();
     this.hp = hp;
+    this.name = 'monster';
+    this.alive = true;
+    this.lootTable = new LootTable(5000, 9999);
   }
 
   damageCharacter(other: Character): void {
@@ -20,5 +24,11 @@ export class Monster extends Character {
 
   onDeath() {
 
+  }
+
+  clone(): Monster {
+    // return new Monster(this.name, this.hp, this.damage, this.alive, this.gold,
+    //   this.monsterType, this.type, this.description, this.experience);
+    return null;
   }
 }
