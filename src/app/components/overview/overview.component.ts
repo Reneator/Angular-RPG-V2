@@ -40,6 +40,8 @@ export class OverviewComponent extends PlayerWindow implements OnInit {
     this.active.windowCharacterChreation = !this.active.windowCharacterChreation;
   }
 
+
+
   public cheatExp(exp: number) {
     this.hero.gainExp(exp);
     console.log('You cheated: your hero got ' + exp + ' Experience added!');

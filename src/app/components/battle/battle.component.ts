@@ -4,7 +4,6 @@ import {PlayerWindow} from '../playerwindows';
 import {Skill} from '../../classes/skills/skill';
 import {Character} from '../../classes/characters/character';
 import {EventCharacterDeath} from '../../classes/event/event-character-death';
-import {HeroService} from '../../services/hero.service';
 
 @Component({
   selector: 'app-battle',
@@ -39,6 +38,7 @@ export class BattleComponent extends PlayerWindow implements OnInit {
 
   attackEnemy() {
     this.enemy.damageCharacter(this.hero);
+    this.hero.damageCharacter(this.hero);
     // this.hero.heroLevel.gainExp(355);
   }
 

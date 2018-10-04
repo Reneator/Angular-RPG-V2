@@ -6,4 +6,5 @@ export class SwitchesWindowsActive {
   windowShop: boolean;
   windowSkill: boolean;
   windowOverview: boolean;
+  windowGameOverScreen: boolean;
 }
