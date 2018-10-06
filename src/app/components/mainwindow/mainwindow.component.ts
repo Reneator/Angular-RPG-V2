@@ -1,6 +1,5 @@
 import {Component, EventEmitter, OnInit, ViewChild} from '@angular/core';
 import {SwitchesWindowsActive} from '../../classes/switcheswindowsactive';
-import {Monster} from '../../classes/characters/monster';
 import {Hero} from '../../classes/characters/hero';
 import {Character} from '../../classes/characters/character';
 import {EventCharacterDeath} from '../../classes/event/event-character-death';
@@ -16,9 +15,6 @@ export class MainwindowComponent implements OnInit {
   @ViewChild('drawer') public drawer: MatSidenav;
 
   player: Hero = new Hero();
-
-  enemy: Monster = new Monster(200);
-
   start: boolean;
 
   active: SwitchesWindowsActive = new SwitchesWindowsActive();
@@ -33,7 +29,7 @@ export class MainwindowComponent implements OnInit {
       next: (event: EventCharacterDeath) => {
         if (event.victim instanceof Hero) {
           console.log(`The player died, now restart the game!`);
-          this.restartGame();
+          // this.restartGame();
           // restartGame();
         }
       }
@@ -47,10 +43,6 @@ export class MainwindowComponent implements OnInit {
   startGame() {
     this.active.windowCharacterChreation = true;
     this.start = true;
-  }
-
-  onVoted(hello: string) {
-    console.log(hello);
   }
 
   restartGame() {
@@ -75,7 +67,6 @@ export class MainwindowComponent implements OnInit {
     this.active.windowCharacterChreation = false;
     this.active.windowGameOverScreen = false;
   }
-
 
 
 }

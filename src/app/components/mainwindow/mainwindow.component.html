@@ -2,13 +2,28 @@
   mainwindow works!
 </p>
 
+<!--<ng-template #content let-c="close" let-d="dismiss">-->
+  <!--<div class="modal-header">-->
+    <!--<h4 class="modal-title" id="modal-basic-title">Game Over!</h4>-->
+    <!--<button type="button" class="close" aria-label="Close" (click)="d('Cross click')">-->
+      <!--<span aria-hidden="true">&times;</span>-->
+    <!--</button>-->
+  <!--</div>-->
+  <!--<div class="modal-body">-->
+    <!--<p>Hello, World!</p>-->
+  <!--</div>-->
+  <!--<div class="modal-footer">-->
+    <!--<button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Save</button>-->
+  <!--</div>-->
+<!--</ng-template>-->
+
 
 <mat-drawer-container [hasBackdrop]="true">
   <mat-drawer #drawer [mode]="">Game Over!</mat-drawer>
   <mat-drawer-content>
     <app-herocreator      *ngIf="active.windowCharacterChreation"  [emitter]="emitter" [hero]="player" [active]="active"></app-herocreator>
     <app-overview         *ngIf="active.windowOverview" [emitter]="emitter" [hero]="player" [active]="active"></app-overview>
-    <app-battle           *ngIf="active.windowBattle" [emitter]="emitter" [enemy]="enemy" [hero]="player" [active]="active"></app-battle>
+    <app-battle           *ngIf="active.windowBattle" [emitter]="emitter" [hero]="player" [active]="active"></app-battle>
     <app-characterwindow  *ngIf="active.windowCharacter" [emitter]="emitter" [hero]="player" [active]="active"></app-characterwindow>
     <app-inventory        *ngIf="active.windowInventory" (voted)="onVoted($event)" [emitter]="emitter" [hero]="player" [active]="active"></app-inventory>
     <app-shop             *ngIf="active.windowShop"   [emitter]="emitter" [hero]="player" [active]="active"></app-shop>

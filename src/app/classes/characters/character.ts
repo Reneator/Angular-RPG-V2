@@ -1,16 +1,24 @@
 import {CharacterSkillsContainer} from '../skills/character-skills-container';
 import {EventEmitter} from '@angular/core';
 import {EventCharacterDeath} from '../event/event-character-death';
-import {LootTable} from './loot-table';
+import {LootTable} from './charactercontainers/loot-table';
+import {CharacterStats} from '../items/character-stats';
+import {CharacterEquipment} from '../items/character-equipment';
+import {CharacterPerks} from '../items/character-perks';
+import {EventCharacterDamaged} from '../event/event-character-damaged';
 
 export abstract class Character {
   public static onDeath = new EventEmitter<EventCharacterDeath>();
+  public static onDamage = new EventEmitter<EventCharacterDeath>();
 
   name: string;
   hp: number;
   damage: number;
   alive;
   lootTable: LootTable;
+  stats: CharacterStats;
+  equipment: CharacterEquipment;
+  perks: CharacterPerks;
 
 
   skills: CharacterSkillsContainer = new CharacterSkillsContainer();
@@ -20,6 +28,7 @@ export abstract class Character {
     if (!this.alive) {
       return;
     }
+    Character.onDamage.emit(new EventCharacterDamaged(dmgOrigin, this));
     if (this.hp - dmgOrigin.damage <= 0) {
       this.hp = 0;
       this.die();

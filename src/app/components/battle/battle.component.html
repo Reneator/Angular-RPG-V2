@@ -2,10 +2,13 @@
   battle works!
 </p>
 
-<ng-container>
 
-  <mat-grid-list cols="2" rowHeight="2:1">
-    <mat-grid-tile class="battlefield"><mat-card>
+<ng-container>
+  <button (click)="nextEnemy()" mat-button>Next Enemy</button>
+
+
+  <mat-grid-list class="battlefield" cols="2" rowHeight="2:1">
+    <mat-grid-tile ><mat-card>
       <mat-card-title>Hero</mat-card-title>
       <mat-card-content>
         <div>Name: {{hero.name}}</div>
@@ -18,7 +21,9 @@
         <div>Level: {{hero.heroLevel?.level}}</div>
       </mat-card-content>
     </mat-card></mat-grid-tile>
-    <mat-grid-tile> <mat-card>
+    <mat-grid-tile>
+
+      <mat-card *ngFor="let enemy of enemies" (click)="attackEnemy(enemy)">
       <mat-card-title>Monster</mat-card-title>
       <mat-card-content>
         <div>Name: {{enemy.name}} </div>
@@ -28,7 +33,7 @@
     </mat-card></mat-grid-tile>
   </mat-grid-list>
 
-  <button (click)="attackEnemy()" mat-button>Attack</button>
+  <!--<button (click)="attackEnemy()" mat-button>Attack</button>-->
 
 
   <mat-card></mat-card>
