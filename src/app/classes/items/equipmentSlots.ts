@@ -1,4 +1,4 @@
-import {Equipment} from './equipment';
+import {Equipment} from './equipment/equipment';
 
 export class EquipmentSlots {
   headSlot: Equipment;
