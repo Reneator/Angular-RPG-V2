@@ -8,4 +8,5 @@ export class Perk {
   private effect: Effect;
   private repeatable: boolean;
   private reapats: number;
+  private priority: number;
 }
