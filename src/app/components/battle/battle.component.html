@@ -8,29 +8,33 @@
 
 
   <mat-grid-list class="battlefield" cols="2" rowHeight="2:1">
-    <mat-grid-tile ><mat-card>
-      <mat-card-title>Hero</mat-card-title>
-      <mat-card-content>
-        <div>Name: {{hero.name}}</div>
-        <div>Class: {{hero.heroClass}}</div>
-        <div>Damage: {{hero.damage}}</div>
-        <div>HP: {{hero.hp}}</div>
-        <div>Gold: {{hero.gold}}</div>
-        <div>HeroLevel: {{hero.heroLevel}}</div>
-        <div>Exp: {{hero.heroLevel?.currentExp}}</div>
-        <div>Level: {{hero.heroLevel?.level}}</div>
-      </mat-card-content>
-    </mat-card></mat-grid-tile>
+    <mat-grid-tile>
+      <mat-card>
+        <mat-card-title>Hero</mat-card-title>
+        <mat-card-content>
+          <div>Name: {{hero.name}}</div>
+          <div>Class: {{hero.heroClass}}</div>
+          <div>Damage: {{hero.damage}}</div>
+          <div>HP: {{hero.hp}}</div>
+          <div>Gold: {{hero.gold}}</div>
+          <div>HeroLevel: {{hero.heroLevel}}</div>
+          <div>Exp: {{hero.heroLevel?.currentExp}}</div>
+          <div>Level: {{hero.heroLevel?.level}}</div>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
     <mat-grid-tile>
 
+      //als eigenes component auslagern
       <mat-card *ngFor="let enemy of enemies" (click)="attackEnemy(enemy)">
-      <mat-card-title>Monster</mat-card-title>
-      <mat-card-content>
-        <div>Name: {{enemy.name}} </div>
-        <div>Damage: {{enemy.damage}}</div>
-        <div>HP: {{enemy.hp}}</div>
-      </mat-card-content>
-    </mat-card></mat-grid-tile>
+        <mat-card-title>Monster</mat-card-title>
+        <mat-card-content>
+            <div>Name: {{enemy.name}}</div>
+            <div>Damage: {{enemy.damage}}</div>
+            <div>HP: {{enemy.hp}}</div>
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
   </mat-grid-list>
 
   <!--<button (click)="attackEnemy()" mat-button>Attack</button>-->

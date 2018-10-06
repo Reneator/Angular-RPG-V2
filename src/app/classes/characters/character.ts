@@ -2,9 +2,9 @@ import {CharacterSkillsContainer} from '../skills/character-skills-container';
 import {EventEmitter} from '@angular/core';
 import {EventCharacterDeath} from '../event/event-character-death';
 import {LootTable} from './charactercontainers/loot-table';
-import {CharacterStats} from '../items/character-stats';
-import {CharacterEquipment} from '../items/character-equipment';
-import {CharacterPerks} from '../items/character-perks';
+import {CharacterStats} from './charactercontainers/character-stats';
+import {CharacterEquipment} from './charactercontainers/character-equipment';
+import {CharacterPerks} from './charactercontainers/character-perks';
 import {EventCharacterDamaged} from '../event/event-character-damaged';
 
 export abstract class Character {
@@ -19,6 +19,8 @@ export abstract class Character {
   stats: CharacterStats;
   equipment: CharacterEquipment;
   perks: CharacterPerks;
+  img: string = '../../../assets/battlefield.png';
+
 
 
   skills: CharacterSkillsContainer = new CharacterSkillsContainer();

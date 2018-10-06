@@ -1,5 +1,5 @@
 import {PerkType} from './perk-type.enum';
-import {Effect} from './effect';
+import {Effect} from '../effects/effect';
 
 export class Perk {
 
