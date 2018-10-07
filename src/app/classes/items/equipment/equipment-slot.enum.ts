@@ -1,3 +1,3 @@
 export enum EquipmentSlotType {
-  HEAD, TRINKET, SHOULDER, WEAPON
+  HEAD = 'Head', TRINKET = 'Trinket', SHOULDER = 'Shoulder', WEAPON = 'Weapon'
 }

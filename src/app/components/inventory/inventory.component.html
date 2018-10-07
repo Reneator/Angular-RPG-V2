@@ -1,3 +1,6 @@
-<p>
-  inventory works!
-</p>
+
+<div *ngFor="let item of hero?.inventory?.getItems()">
+  <div (click)="clickItem(item)">
+<img src="{{item.img}}">
+  </div>
+</div>

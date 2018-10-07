@@ -13,7 +13,8 @@ export class Monster extends Character {
     this.name = 'monster';
     this.damage = 10;
     this.alive = true;
-    this.lootTable = new LootTable(5000, 9999);
+    this.lootTable = new LootTable(5000, 10000);
+    this.img = 'assets/m1-100x100.png';
   }
 
   damageCharacter(other: Character): void {

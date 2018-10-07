@@ -9,7 +9,7 @@ export class Hero extends Character {
   heroClass: HeroClass;
 
 
-  // constructor(damage: number) {
+// constructor(damage: number) {
   //   super();
   //   this.damage = damage;
   //   this.hp = 100;

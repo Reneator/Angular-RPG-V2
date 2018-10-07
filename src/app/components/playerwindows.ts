@@ -5,6 +5,5 @@ import {Hero} from '../classes/characters/hero';
 export class PlayerWindow {
   @Input() active: SwitchesWindowsActive;
   @Input() hero: Hero;
-  @Input() emitter: EventEmitter<any>;
 
 }
