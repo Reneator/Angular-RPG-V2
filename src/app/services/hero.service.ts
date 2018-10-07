@@ -30,11 +30,13 @@ export class HeroService {
     hero.alive = true;
     hero.heroLevel = this.heroLevelService.generateHeroLevel();
     hero.inventory = new CharacterInventory(20);
-    hero.inventory.add(EQUIPMENT_LIST[0]);
+    hero.inventory.addItem(EQUIPMENT_LIST[0]);
     hero.equipment = new CharacterEquipment();
     const slot = new EquipmentSlot(EquipmentSlotType.WEAPON);
     slot.equip(EQUIPMENT_LIST[0]);
     hero.equipment.addEquipmentSlot(slot);
+    const slot2 = new EquipmentSlot(EquipmentSlotType.SHOULDER);
+    hero.equipment.addEquipmentSlot(slot2);
 
 
   }

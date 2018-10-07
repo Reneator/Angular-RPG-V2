@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {PlayerWindow} from '../playerwindows';
-import {Equipment} from '../../classes/items/equipment/equipment';
+import {EquipmentSlot} from '../../classes/items/equipment/equipment-slot';
 
 @Component({
   selector: 'app-characterwindow',
@@ -20,7 +20,17 @@ export class CharacterwindowComponent extends PlayerWindow implements OnInit {
     console.log(this.hero);
   }
 
-  identify(equipment: Equipment) {
-    console.log('You clickd on the equipped Item:' + equipment.name);
+  click(equipmentSlot: EquipmentSlot) {
+    if (equipmentSlot == null) {
+      console.log('Null as EquipmentSlot');
+    } else {
+      if (equipmentSlot.isEmpty()) {
+        console.log('You clicked the empty equipment-Slot: ' + equipmentSlot.slotType);
+      } else {
+        console.log('You clicked the equipment-Slot: ' + equipmentSlot.slotType +
+          ' with the item: ' + equipmentSlot.item.name + ' inside!');
+      }
+    }
+
   }
 }

@@ -13,7 +13,9 @@ export class CharacterEquipment {
     const slots = [];
 
     this.slots.forEach(slot => {
-      slots.push(slot);
+      if (slot.slotType === slotType) {
+        slots.push(slot);
+      }
     });
 
     return slots;
