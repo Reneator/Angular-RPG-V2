@@ -20,17 +20,5 @@ export class CharacterwindowComponent extends PlayerWindow implements OnInit {
     console.log(this.hero);
   }
 
-  click(equipmentSlot: EquipmentSlot) {
-    if (equipmentSlot == null) {
-      console.log('Null as EquipmentSlot');
-    } else {
-      if (equipmentSlot.isEmpty()) {
-        console.log('You clicked the empty equipment-Slot: ' + equipmentSlot.slotType);
-      } else {
-        console.log('You clicked the equipment-Slot: ' + equipmentSlot.slotType +
-          ' with the item: ' + equipmentSlot.item.name + ' inside!');
-      }
-    }
 
-  }
 }

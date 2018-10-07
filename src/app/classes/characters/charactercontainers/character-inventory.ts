@@ -1,5 +1,6 @@
 import {Item} from '../../items/Item';
 import {InventorySlot} from '../../items/inventory-slot';
+import {ItemSlot} from '../../items/equipment/item-slot';
 
 export class CharacterInventory {
 
@@ -36,6 +37,20 @@ export class CharacterInventory {
 
   getEmptySlot() {
 
+  }
+
+  public getById(id: number): ItemSlot {
+    if (id == null) {
+      console.error('The id is null');
+    }
+    let returnSlot: ItemSlot;
+    this.inventorySlots.forEach(slot => {
+      if (slot.id === id) {
+        returnSlot = slot;
+      }
+    });
+
+    return returnSlot;
   }
 
 }

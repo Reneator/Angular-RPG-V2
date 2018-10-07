@@ -1,18 +1,18 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 
-import { AppComponent } from './app.component';
-import { BattleComponent } from './components/battle/battle.component';
-import { ShopComponent } from './components/shop/shop.component';
-import { InventoryComponent } from './components/inventory/inventory.component';
-import { SkillwindowComponent } from './components/skillwindow/skillwindow.component';
-import { CharacterwindowComponent } from './components/characterwindow/characterwindow.component';
-import { MainwindowComponent } from './components/mainwindow/mainwindow.component';
-import { HerocreatorComponent } from './components/herocreator/herocreator.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { OverviewComponent } from './components/overview/overview.component';
+import {AppComponent} from './app.component';
+import {BattleComponent} from './components/battle/battle.component';
+import {ShopComponent} from './components/shop/shop.component';
+import {InventoryComponent} from './components/inventory/inventory.component';
+import {SkillwindowComponent} from './components/skillwindow/skillwindow.component';
+import {CharacterwindowComponent} from './components/characterwindow/characterwindow.component';
+import {MainwindowComponent} from './components/mainwindow/mainwindow.component';
+import {HerocreatorComponent} from './components/herocreator/herocreator.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {OverviewComponent} from './components/overview/overview.component';
 
 import {FormsModule} from '@angular/forms';
 import {
@@ -45,8 +45,15 @@ import {
   MatSlideToggleModule,
   MatSnackBarModule,
   MatSortModule,
-  MatStepperModule, MatTableModule, MatTabsModule, MatToolbarModule, MatTooltipModule, MatTreeModule
+  MatStepperModule,
+  MatTableModule,
+  MatTabsModule,
+  MatToolbarModule,
+  MatTooltipModule,
+  MatTreeModule
 } from '@angular/material';
+import {DndModule} from 'ngx-drag-drop';
+import { EquipmentSlotComponent } from './components/characterwindow/equipment-slot/equipment-slot.component';
 
 
 @NgModule({
@@ -59,7 +66,8 @@ import {
     CharacterwindowComponent,
     MainwindowComponent,
     HerocreatorComponent,
-    OverviewComponent],
+    OverviewComponent,
+    EquipmentSlotComponent],
   imports: [
     BrowserModule,
     NgbModule,
@@ -101,6 +109,7 @@ import {
     MatToolbarModule,
     MatTooltipModule,
     MatTreeModule,
+    DndModule
   ],
   exports: [
     BrowserAnimationsModule,

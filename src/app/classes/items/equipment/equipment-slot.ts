@@ -1,22 +1,20 @@
 import {Equipment} from './equipment';
 import {EquipmentSlotType} from './equipment-slot.enum';
-import {GameObject} from '../../game-object';
 import {ItemSlot} from './item-slot';
-import {Item} from '../Item';
+import {SlotType} from './slot.enum';
 
 export class EquipmentSlot extends ItemSlot {
 
-  slotType: EquipmentSlotType;
+  slotType = SlotType.EQUIPMENT;
+  equipmentSlotType: EquipmentSlotType;
 
 
   constructor(slotType: EquipmentSlotType) {
     super();
-    this.slotType = slotType;
+    this.equipmentSlotType = slotType;
   }
 
-  equip(equipment: Equipment): Equipment {
-    const currentlyEquipped = this.item;
-    this.item = equipment;
-    return <Equipment> currentlyEquipped;
-  }
+
+
+
 }

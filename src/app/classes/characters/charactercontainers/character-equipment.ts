@@ -1,5 +1,6 @@
 import {EquipmentSlot} from '../../items/equipment/equipment-slot';
 import {EquipmentSlotType} from '../../items/equipment/equipment-slot.enum';
+import {ItemSlot} from '../../items/equipment/item-slot';
 
 export class CharacterEquipment {
 
@@ -13,7 +14,7 @@ export class CharacterEquipment {
     const slots = [];
 
     this.slots.forEach(slot => {
-      if (slot.slotType === slotType) {
+      if (slot.equipmentSlotType === slotType) {
         slots.push(slot);
       }
     });
@@ -28,6 +29,22 @@ export class CharacterEquipment {
 
   addEquipmentSlot(slot: EquipmentSlot) {
     this.slots.push(slot);
+  }
+
+  public getById(id: number): ItemSlot {
+    if (id == null) {
+      console.error('The id is null');
+    }
+
+    let returnSlot: ItemSlot;
+    this.slots.forEach(slot => {
+      if (slot.id === id) {
+        returnSlot = slot;
+      }
+    });
+
+    return returnSlot;
+
   }
 
 }

@@ -33,10 +33,14 @@ export class HeroService {
     hero.inventory.addItem(EQUIPMENT_LIST[0]);
     hero.equipment = new CharacterEquipment();
     const slot = new EquipmentSlot(EquipmentSlotType.WEAPON);
-    slot.equip(EQUIPMENT_LIST[0]);
+    slot.exchange(EQUIPMENT_LIST[0]);
     hero.equipment.addEquipmentSlot(slot);
+    const slot3 = new EquipmentSlot(EquipmentSlotType.WEAPON);
+    slot3.exchange(EQUIPMENT_LIST[1]);
+    hero.equipment.addEquipmentSlot(slot3);
     const slot2 = new EquipmentSlot(EquipmentSlotType.SHOULDER);
     hero.equipment.addEquipmentSlot(slot2);
+
 
 
   }

@@ -9,14 +9,7 @@
     {{hero?.name}}
     Equipment:
     <div *ngFor='let equipmentSlot of hero?.equipment?.getSlots(null)'>
-      {{equipmentSlot?.slotType?.toString()}}
-      <div *ngIf="equipmentSlot.item!=null"
-      >
-        <img src={{equipmentSlot.item.img}} (click)="click(equipmentSlot)">
-      </div>
-      <div *ngIf="equipmentSlot.isEmpty()">
-        <img src="assets/equipment-empty.png" (click)="click(equipmentSlot)">
-      </div>
+      <app-equipment-slot [hero]="hero" [equipmentSlot]="equipmentSlot"></app-equipment-slot>
     </div>
   </div>
 

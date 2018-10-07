@@ -1,8 +1,10 @@
 import {Item} from './Item';
 import {ItemSlot} from './equipment/item-slot';
+import {SlotType} from './equipment/slot.enum';
 
 export class InventorySlot extends ItemSlot {
 
+  slotType = SlotType.INVENTORY;
   position: number;
 
   constructor(position: number) {
