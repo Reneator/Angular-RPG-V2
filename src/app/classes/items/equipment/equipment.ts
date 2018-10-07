@@ -5,5 +5,6 @@ import {EquipmentType} from './equipment-type.enum';
 export class Equipment extends Item {
   type: EquipmentType;
   slotType: EquipmentSlotType;
+  value: number;
 
 }

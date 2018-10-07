@@ -21,13 +21,13 @@
 <mat-drawer-container [hasBackdrop]="true">
   <mat-drawer #drawer [mode]="">Game Over!</mat-drawer>
   <mat-drawer-content>
-    <app-herocreator      *ngIf="active.windowCharacterChreation"  [emitter]="emitter" [hero]="player" [active]="active"></app-herocreator>
-    <app-overview         *ngIf="active.windowOverview" [emitter]="emitter" [hero]="player" [active]="active"></app-overview>
-    <app-battle           *ngIf="active.windowBattle" [emitter]="emitter" [hero]="player" [active]="active"></app-battle>
-    <app-characterwindow  *ngIf="active.windowCharacter" [emitter]="emitter" [hero]="player" [active]="active"></app-characterwindow>
-    <app-inventory        *ngIf="active.windowInventory" (voted)="onVoted($event)" [emitter]="emitter" [hero]="player" [active]="active"></app-inventory>
-    <app-shop             *ngIf="active.windowShop"   [emitter]="emitter" [hero]="player" [active]="active"></app-shop>
-    <app-skillwindow      *ngIf="active.windowSkill" [emitter]="emitter" [hero]="player" [active]="active"></app-skillwindow>
+    <app-herocreator      *ngIf="active.windowCharacterChreation"   [hero]="player" [active]="active"></app-herocreator>
+    <app-overview         *ngIf="active.windowOverview"  [hero]="player" [active]="active"></app-overview>
+    <app-battle           *ngIf="active.windowBattle"     [hero]="player" [active]="active"></app-battle>
+    <app-characterwindow  *ngIf="active.windowCharacter"  [hero]="player" [active]="active"></app-characterwindow>
+    <app-inventory        *ngIf="active.windowInventory"  [hero]="player" [active]="active"></app-inventory>
+    <app-shop             *ngIf="active.windowShop"     [hero]="player" [active]="active"></app-shop>
+    <app-skillwindow      *ngIf="active.windowSkill"    [hero]="player" [active]="active"></app-skillwindow>
   </mat-drawer-content>
 </mat-drawer-container>
 

@@ -1,6 +1,23 @@
-<p>
-  characterwindow works!
-</p>
 
-Name: {{hero?.name}}
-Class: {{hero?.heroClass}}
+<!--{{hero}}-->
+<!--Name: {{hero?.name}}-->
+<!--Class: {{hero?.heroClass}}-->
+
+<button mat-button (click)="hello()">Hello</button>
+<div>
+
+  {{hero?.name}}
+  Equipment:
+
+  <div *ngFor='let equipmentSlot of hero?.equipment?.getSlots(null)'>
+    {{equipmentSlot?.slotType?.toString()}}
+    <div *ngIf="equipmentSlot.equipment!=null"
+    >
+      <img src={{equipmentSlot.equipment.img}} (click)="identify(equipmentSlot.equipment)">
+    </div>
+    <div *ngIf="equipmentSlot.equipment == null">
+      Empty slot
+    </div>
+    {{equipmentSlot.equipment?.name}}
+  </div>
+</div>

@@ -47,7 +47,6 @@ import {
   MatSortModule,
   MatStepperModule, MatTableModule, MatTabsModule, MatToolbarModule, MatTooltipModule, MatTreeModule
 } from '@angular/material';
-import { EnemyComponent } from './components/battle/enemy/enemy.component';
 
 
 @NgModule({
@@ -60,9 +59,7 @@ import { EnemyComponent } from './components/battle/enemy/enemy.component';
     CharacterwindowComponent,
     MainwindowComponent,
     HerocreatorComponent,
-    OverviewComponent,
-    EnemyComponent
-  ],
+    OverviewComponent],
   imports: [
     BrowserModule,
     NgbModule,

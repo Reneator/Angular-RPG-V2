@@ -6,8 +6,10 @@ import {CharacterStats} from './charactercontainers/character-stats';
 import {CharacterEquipment} from './charactercontainers/character-equipment';
 import {CharacterPerks} from './charactercontainers/character-perks';
 import {EventCharacterDamaged} from '../event/event-character-damaged';
+import {GameObject} from '../game-object';
+import {CharacterInventory} from './charactercontainers/character-inventory';
 
-export abstract class Character {
+export abstract class Character extends GameObject {
   public static onDeath = new EventEmitter<EventCharacterDeath>();
   public static onDamage = new EventEmitter<EventCharacterDeath>();
 
@@ -19,9 +21,12 @@ export abstract class Character {
   stats: CharacterStats;
   equipment: CharacterEquipment;
   perks: CharacterPerks;
-  img: string = '../../../assets/battlefield.png';
+  inventory: CharacterInventory;
 
 
+  constructor() {
+    super();
+  }
 
   skills: CharacterSkillsContainer = new CharacterSkillsContainer();
 

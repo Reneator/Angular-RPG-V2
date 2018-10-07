@@ -3,7 +3,7 @@ import {EquipmentSlotType} from '../../items/equipment/equipment-slot.enum';
 
 export class CharacterEquipment {
 
-  private slots: EquipmentSlot[];
+  private slots: EquipmentSlot[] = [];
 
 
   getSlots(slotType: EquipmentSlotType): EquipmentSlot[] {
@@ -19,5 +19,13 @@ export class CharacterEquipment {
     return slots;
   }
 
+
+  addSlot(slotType: EquipmentSlotType) {
+    this.slots.push(new EquipmentSlot(slotType));
+  }
+
+  addEquipmentSlot(slot: EquipmentSlot) {
+    this.slots.push(slot);
+  }
 
 }
