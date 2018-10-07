@@ -1,23 +1,23 @@
-
 <!--{{hero}}-->
 <!--Name: {{hero?.name}}-->
 <!--Class: {{hero?.heroClass}}-->
 
-<button mat-button (click)="hello()">Hello</button>
 <div>
+  <button mat-button (click)="hello()">Hello</button>
+  <div>
 
-  {{hero?.name}}
-  Equipment:
-
-  <div *ngFor='let equipmentSlot of hero?.equipment?.getSlots(null)'>
-    {{equipmentSlot?.slotType?.toString()}}
-    <div *ngIf="equipmentSlot.equipment!=null"
-    >
-      <img src={{equipmentSlot.equipment.img}} (click)="identify(equipmentSlot.equipment)">
+    {{hero?.name}}
+    Equipment:
+    <div *ngFor='let equipmentSlot of hero?.equipment?.getSlots(null)'>
+      {{equipmentSlot?.slotType?.toString()}}
+      <div *ngIf="equipmentSlot.item!=null"
+      >
+        <img src={{equipmentSlot.item.img}} (click)="click(equipmentSlot)">
+      </div>
+      <div *ngIf="equipmentSlot.isEmpty()">
+        <img src="assets/equipment-empty.png" (click)="click(equipmentSlot)">
+      </div>
     </div>
-    <div *ngIf="equipmentSlot.equipment == null">
-      Empty slot
-    </div>
-    {{equipmentSlot.equipment?.name}}
   </div>
+
 </div>

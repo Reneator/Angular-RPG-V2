@@ -1,6 +1,11 @@
-
-<div *ngFor="let item of hero?.inventory?.getItems()">
-  <div (click)="clickItem(item)">
-<img src="{{item.img}}">
+<div>
+  Inventory
+  <div *ngFor="let inventorySlot of hero?.inventory?.getInventorySlots()">
+    <div *ngIf="inventorySlot.isEmpty()" (click)="clickItem(inventorySlot)">
+      <img src="assets/inventory-empty.png">
+    </div>
+    <div *ngIf="!inventorySlot.isEmpty()" (click)="clickItem(inventorySlot)">
+      <img src={{inventorySlot.item.img}}>
+    </div>
   </div>
 </div>
