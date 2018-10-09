@@ -3,7 +3,8 @@ import {EquipmentSlotType} from '../classes/items/equipment/equipment-slot.enum'
 import {EquipmentType} from '../classes/items/equipment/equipment-type.enum';
 
 export const EQUIPMENT_LIST: Equipment[] = [
-  {id: 500000, equipmentId: 1, name: 'smol Axe', goldValue: 5, value: 10, slotType: EquipmentSlotType.WEAPON, type: EquipmentType.WEAPON, img: 'assets/i1-axe.png'},
-  {id: 600000, equipmentId: 2, name: 'Big Axe', goldValue: 50, value: 100, slotType: EquipmentSlotType.WEAPON, type: EquipmentType.WEAPON, img: 'assets/i2-big-axe.png'}
+
+  new Equipment(1, 'smol Axe', 2, 5, EquipmentType.WEAPON, EquipmentSlotType.WEAPON),
+  new Equipment(2, 'Big Axe', 5, 5, EquipmentType.WEAPON, EquipmentSlotType.WEAPON),
 
 ];

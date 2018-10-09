@@ -45,6 +45,20 @@ export abstract class Character extends GameObject {
     }
   }
 
+  damageCharacterDirectly(dmgOrigin: Character, dmg: number): void {
+    if (!this.alive) {
+      return;
+    }
+    Character.onDamage.emit(new EventCharacterDamaged(dmgOrigin, this));
+    if (this.hp - dmg <= 0) {
+      this.hp = 0;
+      this.die();
+      Character.onDeath.emit(new EventCharacterDeath(dmgOrigin, this));
+    } else {
+      this.hp = this.hp - dmg;
+    }
+  }
+
   die(): void {
     this.alive = false;
   }

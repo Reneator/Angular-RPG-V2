@@ -192,12 +192,30 @@ export class BattleComponent extends PlayerWindow implements OnInit {
     const lastTick = new Date();
     while (BattleComponent.combatActive) {
       // console.log('loop started ' + startTime + ' ms ago and running since: ' + (new Date().getTime() - startTime.getTime()));
-      await this.timer(50);
+      await this.timer(10);
 
-      if ((new Date().getTime() - lastAttack.getTime()) >= attackDelay) {
+      if ((new Date().getTime() - lastAttack.getTime()) >= (attackDelay - 5)) {
         console.log('attack: time since last attack: ' + (new Date().getTime() - lastAttack.getTime()) + ' ms!');
+        this.attackMonster();
         lastAttack = new Date();
       }
+    }
+  }
+
+  attackMonster() {
+    if (this.enemies == null) {
+      this.nextEnemy();
+    }
+    let fight = false;
+    fight = this.enemies.some(e => {
+      if (e.alive) {
+        Calculator.attackCharacter(this.hero, e);
+        return true;
+      }
+    });
+
+    if (!fight) {
+      this.nextEnemy();
     }
   }
 

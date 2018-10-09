@@ -23,7 +23,7 @@ export class HeroService {
     hero.name = name;
     hero.heroClass = heroClass;
     hero.hp = 500;
-    hero.damage = 200;
+    hero.damage = 5;
     hero.gold = 0;
     hero.mana = 0;
     hero.img = 'assets/hero1.png';
